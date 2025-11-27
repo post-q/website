@@ -1,7 +1,6 @@
 name: Deploy to Pages Branch
 
 on:
-  # Uruchom przy push na branch main
   push:
     branches: [main]
   
