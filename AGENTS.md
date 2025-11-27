@@ -2,15 +2,17 @@
 
 ## Build & Test Commands
 
-- `npm run dev` - Start dev server at localhost:4321
-- `npm run build` - Build production site to ./dist/
-- `npm run preview` - Preview production build locally
+- `npm run dev` - Start dev server at localhost:4321 (search NOT available)
+- `npm run dev:search` - Build + preview with search functionality
+- `npm run build` - Build production site to ./dist/ + generate Pagefind index
+- `npm run preview` - Preview production build locally (search works here)
 - `npm run check` - Run all checks (Astro + ESLint + Prettier)
 - `npm run check:astro` - Type-check Astro files only
 - `npm run check:eslint` - Lint with ESLint only
 - `npm run check:prettier` - Check formatting only
 - `npm run fix` - Auto-fix ESLint and Prettier issues
 - No test suite configured in this project
+- NOTE: Pagefind search only works after build (use preview, not dev)
 
 ## Code Style
 
@@ -27,3 +29,7 @@
 - Astro 5.0 + Tailwind CSS static site with blog functionality
 - Content in `src/content/post/` (MDX/Markdown), pages in `src/pages/`
 - Config in `src/config.yaml` controls site metadata, blog settings, analytics
+- Pagefind search in header (works only after build, not in dev mode)
+- Contact form at `/kontakt` uses Web3Forms (requires `PUBLIC_WEB3FORMS_ACCESS_KEY` in .env)
+- Environment variables: Copy `.env.example` to `.env` and fill in keys
+- trailingSlash: false - Pagefind URLs are processed client-side to remove trailing slash
