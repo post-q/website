@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy to Pages Branch
 
 on:
   # Uruchom przy push na branch main
@@ -8,23 +8,12 @@ on:
   # Pozwól na ręczne uruchomienie z zakładki Actions
   workflow_dispatch:
 
-# Nadaj uprawnienia do zapisu w GitHub Pages
 permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-# Pozwól na tylko jeden deployment na raz
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
-env:
-  BUILD_PATH: "." # Domyślna ścieżka do projektu (root)
+  contents: write
 
 jobs:
-  build:
-    name: Build
+  build-and-deploy:
+    name: Build and Deploy to Pages Branch
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -35,39 +24,21 @@ jobs:
         with:
           node-version: "20"
           cache: npm
-          cache-dependency-path: ${{ env.BUILD_PATH }}/package-lock.json
-
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v4
 
       - name: Install dependencies
         run: npm ci
-        working-directory: ${{ env.BUILD_PATH }}
 
       - name: Build with Astro
         run: npm run build
-        working-directory: ${{ env.BUILD_PATH }}
         env:
-          # Dodaj zmienne środowiskowe z GitHub Secrets
-          PUBLIC_SITE_URL: ${{ secrets.PUBLIC_SITE_URL || 'https://your-username.github.io/your-repo' }}
+          PUBLIC_SITE_URL: ${{ secrets.PUBLIC_SITE_URL || 'https://postq.pl' }}
           PUBLIC_WEB3FORMS_ACCESS_KEY: ${{ secrets.PUBLIC_WEB3FORMS_ACCESS_KEY }}
-          PUBLIC_HCAPTCHA_SITE_KEY: ${{ secrets.PUBLIC_HCAPTCHA_SITE_KEY }}
           PUBLIC_GOOGLE_ANALYTICS_ID: ${{ secrets.PUBLIC_GOOGLE_ANALYTICS_ID }}
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Deploy to pages branch
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          path: ${{ env.BUILD_PATH }}/dist
-
-  deploy:
-    name: Deploy
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: pages
+          force_orphan: true
