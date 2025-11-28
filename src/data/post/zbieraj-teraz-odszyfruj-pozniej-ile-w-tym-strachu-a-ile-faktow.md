@@ -1,6 +1,6 @@
 ---
 publishDate: 2025-11-25T00:00:00Z
-title: Kwantowe lęki i cyfrowa rzeczywistość
+title: Zbieraj teraz, odszyfruj później — ile w tym strachu, a ile faktów?
 author: Michal Pietrus
 excerpt: Krótka analiza, na ile realne jest zagrożenie "Zbieraj teraz, odszyfruj później" i kiedy faktycznie warto myśleć o zabezpieczeniach post-kwantowych.
 image: ~/assets/images/posts/qubits_game.png
@@ -8,7 +8,7 @@ tags:
   - pqc
   - hndl
 metadata:
-  canonical: https://postQ.pl
+  canonical: https://postq.pl/blog/zbieraj-teraz-odszyfruj-pozniej-ile-w-tym-strachu-a-ile-faktow
 ---
 
 Wynik rozgrywki jest jednoznaczny: drużyna preQuantumCrypto zawsze przegra z drużyną QuantumComputer. ⚡

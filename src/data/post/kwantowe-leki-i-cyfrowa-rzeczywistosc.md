@@ -8,7 +8,7 @@ tags:
   - pqc
   - hndl
 metadata:
-  canonical: https://postQ.pl
+  canonical: https://postq.pl/blog/kwantowe-leki-i-cyfrowa-rzeczywistosc
 ---
 
 W polskiej przestrzeni cyfrowej zaczynają pojawiać się tematy związane z komputerem kwantowym i zagrożeniami jakie niesie jego powstanie. ⚛️💻
