@@ -3,7 +3,7 @@ name: Deploy to Pages Branch
 on:
   push:
     branches: [main]
-  
+
   # Pozwól na ręczne uruchomienie z zakładki Actions
   workflow_dispatch:
 
@@ -41,3 +41,4 @@ jobs:
           publish_dir: ./dist
           publish_branch: pages
           force_orphan: true
+          cname: postq.pl
