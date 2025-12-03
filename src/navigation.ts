@@ -7,8 +7,12 @@ export const headerData = {
       href: getBlogPermalink(),
     },
     {
+      text: 'Oferta',
+      href: '/#oferta',
+    },
+    {
       text: 'Kontakt',
-      href: getPermalink('/kontakt'),
+      href: '/#kontakt',
     },
   ],
   actions: [],
@@ -17,8 +21,12 @@ export const headerData = {
 export const footerData = {
   links: [
     {
-      title: 'Blog',
-      links: [{ text: 'All Posts', href: getBlogPermalink() }],
+      title: 'PostQ.pl',
+      links: [
+        { text: 'Blog', href: getBlogPermalink() },
+        { text: 'Oferta', href: '/#oferta' },
+        { text: 'Kontakt', href: '/#kontakt' },
+      ],
     },
   ],
   secondaryLinks: [],
