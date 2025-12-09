@@ -35,4 +35,4 @@ Korea zatem pokazuje, że kompetencje to nie wszystko. Potrzebna jest odwaga, ab
 
 Czy Europa jest gotowa zrobić to samo?
 
-A może my w Polsce powinniśmy przynajmniej rozważyć standardy koreańskie na rzecz cyfrowego bezpieczeństwa narodowego w wariancie post-quantum?
+Proponuję, żebyśmy w Polsce  przynajmniej rozważyli standardy koreańskie na rzecz cyfrowego bezpieczeństwa narodowego w wariancie post-quantum. Na poziomie bezpieczeństwa narodowego nie ma miejsca na interoperacyjność.
